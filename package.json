@@ -1,0 +1,21 @@
+{
+  "name": "@naughtldy/renovate-config",
+  "version": "0.1.0",
+  "repository": "git@github.com:naughtLdy/renovate-config.git",
+  "author": "naughtLdy <naughtLdy@users.noreply.github.com>",
+  "license": "MIT",
+  "renovate-config": {
+    "default": {
+      "extends": [
+        "config:base"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "renovate-config-validator"
+  },
+  "devDependencies": {
+    "prettier": "1.19.1",
+    "renovate": "19.103.0"
+  }
+}
