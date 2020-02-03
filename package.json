@@ -7,7 +7,133 @@
   "renovate-config": {
     "default": {
       "extends": [
-        "config:base"
+        ":autodetectPinVersions",
+        ":combinePatchMinorReleases",
+        ":ignoreModulesAndTests",
+        ":ignoreUnstable",
+        ":label(Renovate)",
+        ":pinAllExceptPeerDependencies",
+        ":prNotPending",
+        ":semanticPrefixFixDepsChoreOthers",
+        ":separateMajorReleases",
+        ":timezone(Asia/Tokyo)",
+        ":updateNotScheduled",
+        "group:monorepos",
+        "group:recommended",
+        "helpers:disableTypesNodeMajor"
+      ],
+      "packageRules": [
+        {
+          "depTypeList": [
+            "dependencies"
+          ],
+          "packagePatterns": [
+            "*"
+          ],
+          "updateTypes": [
+            "patch"
+          ],
+          "groupName": "all patch dependencies",
+          "paths": [
+            "package.json"
+          ]
+        },
+        {
+          "depTypeList": [
+            "dependencies"
+          ],
+          "packagePatterns": [
+            "*"
+          ],
+          "updateTypes": [
+            "minor"
+          ],
+          "groupName": "all minor dependencies",
+          "paths": [
+            "package.json"
+          ]
+        },
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "packagePatterns": [
+            "*"
+          ],
+          "updateTypes": [
+            "patch"
+          ],
+          "groupName": "all patch devDependencies",
+          "paths": [
+            "package.json"
+          ]
+        },
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "packagePatterns": [
+            "*"
+          ],
+          "updateTypes": [
+            "minor"
+          ],
+          "groupName": "all minor devDependencies",
+          "paths": [
+            "package.json"
+          ]
+        },
+        {
+          "depTypeList": [
+            "dependencies"
+          ],
+          "labels": [
+            "Renovate",
+            "dependencies"
+          ],
+          "vulnerabilityAlerts": {
+            "labels": [
+              "Renovate",
+              "dependencies",
+              "Security"
+            ]
+          }
+        },
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "labels": [
+            "Renovate",
+            "devDependencies"
+          ],
+          "vulnerabilityAlerts": {
+            "labels": [
+              "Renovate",
+              "devDependencies",
+              "Security"
+            ]
+          }
+        }
+      ],
+      "branchPrefix": "renovate/",
+      "prConcurrentLimit": 10,
+      "schedule": "before 1am on Monday"
+    },
+    "jest": {
+      "packageRules": [
+        {
+          "groupName": "jest sync packages",
+          "sourceUrlPrefixes": [
+            "https://github.com/facebook/jest"
+          ],
+          "packageNames": [
+            "@types/jest",
+            "ts-jest"
+          ],
+          "commitMessageSuffix": "**Warning: dependencies out of sync**",
+          "prBodyNotes": "**ATTENTION:** Jest packages should be the same MAJOR version."
+        }
       ]
     }
   },
