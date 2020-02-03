@@ -115,7 +115,9 @@
             ]
           }
         }
-      ]
+      ],
+      "branchPrefix": "renovate/",
+      "prConcurrentLimit": 10
     }
   },
   "husky": {
