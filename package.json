@@ -117,7 +117,8 @@
         }
       ],
       "branchPrefix": "renovate/",
-      "prConcurrentLimit": 10
+      "prConcurrentLimit": 10,
+      "schedule": "before 1am on Monday"
     },
     "jest": {
       "packageRules": [
