@@ -1,0 +1,30 @@
+version: 2.1
+
+executors:
+  default:
+    parameters:
+      image:
+        type: string
+        default: circleci/node:12.14.1
+        description: a image for docker container
+    docker:
+      - image: <<parameters.image>>
+    working_directory: ~/workspace
+
+jobs:
+  test:
+    working_directory: ~/workspace
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: install package
+          command: npm ci
+      - run:
+          name: test
+          command: npm run test
+
+workflows:
+  test:
+    jobs:
+      - test
