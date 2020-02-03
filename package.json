@@ -7,7 +7,20 @@
   "renovate-config": {
     "default": {
       "extends": [
-        "config:base"
+        ":autodetectPinVersions",
+        ":combinePatchMinorReleases",
+        ":ignoreModulesAndTests",
+        ":ignoreUnstable",
+        ":label(Renovate)",
+        ":pinAllExceptPeerDependencies",
+        ":prNotPending",
+        ":semanticPrefixFixDepsChoreOthers",
+        ":separateMajorReleases",
+        ":timezone(Asia/Tokyo)",
+        ":updateNotScheduled",
+        "group:monorepos",
+        "group:recommended",
+        "helpers:disableTypesNodeMajor"
       ]
     }
   },
