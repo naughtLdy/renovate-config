@@ -118,6 +118,22 @@
       ],
       "branchPrefix": "renovate/",
       "prConcurrentLimit": 10
+    },
+    "jest": {
+      "packageRules": [
+        {
+          "groupName": "jest sync packages",
+          "sourceUrlPrefixes": [
+            "https://github.com/facebook/jest"
+          ],
+          "packageNames": [
+            "@types/jest",
+            "ts-jest"
+          ],
+          "commitMessageSuffix": "**Warning: dependencies out of sync**",
+          "prBodyNotes": "**ATTENTION:** Jest packages should be the same MAJOR version."
+        }
+      ]
     }
   },
   "husky": {
