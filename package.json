@@ -13,6 +13,7 @@
         ":ignoreUnstable",
         ":label(Renovate)",
         ":pinAllExceptPeerDependencies",
+        ":prImmediately",
         ":prNotPending",
         ":semanticPrefixFixDepsChoreOthers",
         ":separateMajorReleases",
