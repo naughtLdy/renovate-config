@@ -1,6 +1,6 @@
 {
   "name": "@naughtldy/renovate-config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": "git@github.com:naughtLdy/renovate-config.git",
   "homepage": "https://github.com/naughtLdy/renovate-config/blob/master/README.md",
   "author": "naughtLdy <naughtLdy@users.noreply.github.com>",
